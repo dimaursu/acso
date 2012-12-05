@@ -21,7 +21,6 @@
 #define BRIGHT_WHITE   0x0F
 
 
-int x, y;
 char color = 0x07;
 int position = 0;
 
@@ -30,7 +29,8 @@ int putc( char c)
     char* vidmem = (char *) 0xb8000; //a pointer to video memory
     vidmem[position] = c;
     vidmem[position++] = color; //setting the color; we could just use 0x7, gray text on black background; 
-    position = position +2; 
+    position = position +1; 
+    return 0;
 }
 
 int puts( char* string )
