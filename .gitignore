@@ -1,0 +1,3 @@
+#ingnoring all object files
+*.o
+*.so
