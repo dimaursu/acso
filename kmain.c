@@ -4,12 +4,10 @@
 
 int main( void )
 {  
-  putc('H');
- // putc('l');
- // putc('l');
- // putc('o');
+  putc('q');
+  puts("trololoololololooloo");
 
-//  puts("trololoololololooloo");
+  puts("enter your command here $");
 
   for(;;);
 }

@@ -13,7 +13,7 @@ kernel.bin: kernel.elf
 		objcopy -R .note -R .comment -S -O binary kernel.elf kernel.bin
 
 kernel.elf: loader.o kmain.c
-		gcc -m32  -ffreestanding -fno-builtin -nostdlib -c kmain.c -Wall
+		gcc -m32  -ffreestanding -fno-builtin -nostdlib -c kmain.c
 		ld -melf_i386 -Ttext 0x1000 -o kernel.elf loader.o kmain.o
 
 boot.bin: boot.asm
