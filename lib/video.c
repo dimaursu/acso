@@ -7,6 +7,17 @@ int row = 0;
 int col = 0;
 int position = 0;
 
+ void update_cursor(int row, int col)
+ {
+    unsigned short pos=(row*80) + col;
+    // cursor LOW port to vga INDEX register
+    outb(0x3D4, 0x0F);
+    outb(0x3D5, (unsigned char)(pos&0xFF));
+    // cursor HIGH port to vga INDEX register
+    outb(0x3D4, 0x0E);
+    outb(0x3D5, (unsigned char )((pos>>8)&0xFF));
+ }
+
 void putc( char c)
 {
     if (col == 160) {row++; col =0;}
@@ -14,6 +25,7 @@ void putc( char c)
     char *vidmem = (char *) 0xb8000; //a pointer to video memory
     vidmem[position] = c;
     vidmem[position+1] = 0x7;
+    update_cursor(row, col/2+1);
     col = col + 2;
 }
 
@@ -35,7 +47,7 @@ void puts( char *string )
         i++;
       }
     }
-  }
+}
 
 void clrscr()
 {
