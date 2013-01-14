@@ -1,6 +1,8 @@
 #include "lib/io.c"
 #include "lib/kbd.c"
 #include "lib/video.c"
+#include "lib/longjmp.c"
+
 
 int main( void )
 {
@@ -15,6 +17,7 @@ int main( void )
       gets(name);
       puts("\n");
       cmd_hello(name);
+
     }
 
 }
