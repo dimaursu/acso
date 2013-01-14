@@ -4,14 +4,15 @@
 
 int main( void )
 {
-  char command[200];
+ // char command[200];
+  char name[40];
     for(;;)
     {
-      puts("Enter a command:$");
+      /*puts("Enter a command:$");
       gets(command);
-      puts("\nYou typed:\n");
-      puts(command);
-      puts("\n");
+      puts("\n");*/
+      gets(name);
+      cmd_hello(name);
     }
 
 }
