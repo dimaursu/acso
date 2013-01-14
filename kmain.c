@@ -11,7 +11,9 @@ int main( void )
       /*puts("Enter a command:$");
       gets(command);
       puts("\n");*/
+      puts("insert here:");
       gets(name);
+      puts("\n");
       cmd_hello(name);
     }
 
