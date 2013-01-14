@@ -68,13 +68,12 @@ void yield()
     }
 }
 
-* vidmem = (char *) 0xb8000;
+char * vidmem = (char *) 0xb8000;
 
 void wait() 
 {
-  int a, b;
-  for ( a = 1 ; a <= 3000 ; a++ ) 
-  for ( b = 1 ; b <= 3000 ; b++ );
+  long int a;
+  for ( a = 1 ; a <= 34343000 ; a++ ) ;
 }
 
 void task0 (void) 
@@ -99,6 +98,7 @@ void task1 (void)
 
 int main( void )
 {
+	vidmem[0]= 'C';
   vidmem[1] = 0x7;
   vidmem[3] = 0x7;
   sched_add_task(task0);

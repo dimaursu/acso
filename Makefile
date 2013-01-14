@@ -23,4 +23,4 @@ boot.bin: boot.asm
 	nasm -f bin boot.asm -o boot.bin
 
 test: floppy.img
-	qemu-system-i386 -boot a -fda floppy.img -curses
+	qemu-system-i386 -fda floppy.img -boot a -no-fd-bootchk --curses
