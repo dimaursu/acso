@@ -1,0 +1,13 @@
+acso
+====
+
+== Laboratory work 5 and 6 ==
+
+Here the tasks were more complicated. Being lazy, I smashed all the functions needed for a simple multitaskiing in kmain.c
+While that is a bad practice, and it results in lots of spaghetti, it does work.
+we use a few functions : 
+    void sched_add_task(void* func_ptr) – add a task to scheduler by giving a function pointer
+    void yield(void) – give control to scheduler in a task
+    void sched_run(void) – start the scheduler
+
+using setjmp we store the content of the registers in stack, and with longjmp we get them back, when we want to continue our previous task. 

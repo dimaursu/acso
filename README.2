@@ -1,0 +1,21 @@
+acso
+====
+
+Lucrarea 2
+
+I have implemented putc(), puts(), gets(), clrscr() and update_cursor() functions
+Most of them are the one found in C language, so theyr name is pretty straigth forward, 
+and what they do. 
+
+One of the basic funtion is putc. Everywhere I'm using row, col and position as global variables to keep track of where I'm putting the string.
+In putc, I first took care of line wrapping [line 23]
+then, we proced computing the position. We put there the character, and use a white on black background character.
+We are updating the position of the cursor, as well the column.
+
+puts - we are printing char by char, until we have the null byte.
+also we keep track of any newline char, and we increse the row by one, and reset the column.
+
+clrscr - we just print and empty char all over :D
+
+gets - using a function defined in kbd.c, getchar, we store 32 charcters one by one in an array.
+also, it's cool to enable a echo, and after capturing a char we output it. once again putc comes in handy. 
